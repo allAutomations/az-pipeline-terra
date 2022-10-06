@@ -5,12 +5,22 @@ terraform {
       version                  = "=3.0.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name      = "tf-storage-rg"
+    storage_account_name     = "azpipelineterrastorage"
+    container_name           = "tfstate"
+    key                      = "terraform.tfstate"
+    
+  }
 }
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
 }
+
+
 
 # Create a resource group
 resource "azurerm_resource_group" "tf_rg" {

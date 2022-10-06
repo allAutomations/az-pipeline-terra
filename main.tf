@@ -23,7 +23,7 @@ resource "azurerm_container_group" "tf_cg"{
   location                    = azurerm_resource_group.tf_rg.location
   resource_group_name         = azurerm_resource_group.tf_rg.name
 
-  ip_address_type             = "public"
+  ip_address_type             = "Public"
   dns_name_label              = "semotapis"
   os_type                     = "Linux"
 

@@ -43,7 +43,7 @@ stages:
     - script: |
         set e
         terraform init -input=false
-        terra apply -input=false -auto-approve
+        terraform apply -input=false -auto-approve
       name: 'RunTerraform'
       displayName: 'Run Terraform'
       env:

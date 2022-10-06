@@ -20,6 +20,11 @@ provider "azurerm" {
   features {}
 }
 
+variable "imagebuild" {
+  type                        = string
+  description                 = "Latest build number"
+}
+
 
 
 # Create a resource group
@@ -39,7 +44,7 @@ resource "azurerm_container_group" "tf_cg"{
 
   container{
     name                      = "weatherapi"
-    image                     = "sbeyou/semotapi"
+    image                     = "sbeyou/semotapi:${var.imagebuild}"
       cpu                     = "1"
       memory                  = "1"
 

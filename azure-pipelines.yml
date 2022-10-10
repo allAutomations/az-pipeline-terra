@@ -13,7 +13,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
-- stage: Build and publish image
+- stage: Build
   displayName: Build image
   jobs:
   - job: Build
@@ -31,7 +31,7 @@ stages:
           $(tag)
 - stage: Infra Provisioning
   displayName: 'Infra provisioning on azure ...'
-  dependsOn: Build and publish image
+  dependsOn: Build 
   jobs:
   - job: 'Provision'
     displayName: 'Provisioning container instance'

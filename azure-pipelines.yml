@@ -29,7 +29,7 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-- stage:
+- stage: Infra Provisioning
   displayName: 'Infra provisioning on azure ...'
   dependsOn: Build
   jobs:

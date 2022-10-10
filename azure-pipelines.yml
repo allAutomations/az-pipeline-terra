@@ -31,7 +31,7 @@ stages:
           $(tag)
 - stage: Infra Provisioning
   displayName: 'Infra provisioning on azure ...'
-  dependsOn: Build
+  dependsOn: Build and publish image
   jobs:
   - job: 'Provision'
     displayName: 'Provisioning container instance'
